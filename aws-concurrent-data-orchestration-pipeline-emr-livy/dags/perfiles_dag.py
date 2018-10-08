@@ -16,7 +16,7 @@ default_args = {
 
 # Initialize the DAG
 # Concurrency --> Number of tasks allowed to run concurrently
-dag = DAG('Perfiles Pipeline', concurrency=3, schedule_interval=None, default_args=default_args)
+dag = DAG('perfiles_pipeline', concurrency=3, schedule_interval=None, default_args=default_args)
 region = emr.get_region()
 emr.client(region_name=region)
 
