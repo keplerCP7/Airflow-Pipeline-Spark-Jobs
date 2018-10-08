@@ -8,7 +8,7 @@ from datetime import datetime, timedelta
 default_args = {
     'owner': 'airflow',
     'depends_on_past': False,
-    'start_date': datetime(2018, 07, 10),
+    'start_date': datetime(2018, 7, 10),
     'retries': 0,
     'retry_delay': timedelta(minutes=2),
     'provide_context': True
