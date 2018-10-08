@@ -102,7 +102,7 @@ def submit_statement(session_url, statement_path):
     statements_url = session_url + '/statements'
     with open(statement_path, 'r') as f:
         code = f.read()
-    data = {'code': code}
+    data = {'code': code, "name": "Test LivyREST", "executorCores":4, "executorMemory":"4G", "driverCores":1, "driverMemory":"3G", "queue":"default", "args":["CO", "201802"]}
     response = requests.post(statements_url, data=json.dumps(data), headers={'Content-Type': 'application/json'})
     logging.info(response.json())
     return response
