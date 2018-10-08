@@ -193,7 +193,7 @@ terminate_cluster = PythonOperator(
 
 # construct the DAG by setting the dependencies
 create_cluster >> wait_for_cluster_completion
-wait_for_cluster_completion >> generate_input >> generate_training >>terminate_cluster
+wait_for_cluster_completion >> generate_input >> generate_training >> terminate_cluster
 #wait_for_cluster_completion >> transform_ratings >> terminate_cluster
 #wait_for_cluster_completion >> transform_links >> terminate_cluster
 #wait_for_cluster_completion >> transform_tags >> terminate_cluster
