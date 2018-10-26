@@ -17,7 +17,7 @@ dag = DAG('pyspark-pipeline', concurrency=3, schedule_interval=None, default_arg
 
 def generate_perfil_input(**kwargs):
         ti = kwargs['ti']
-        host = 'http://ec2-10-12-6-176.compute-1.amazonaws.com:8998'
+        host = 'http://ec2-xx-xx-x-xxxx.compute-1.amazonaws.com:8998'
         data = {"file": "s3://hdata-belcorp/pyspark-files/Data_Perfil_Input.py", "name": "Test LivyREST", "driverMemory":"3G", "args":["PA", "201801"]}
         headers = {'Content-Type': 'application/json'}
         r = requests.post(host + '/batches', data=json.dumps(data), headers=headers)
@@ -26,7 +26,7 @@ def generate_perfil_input(**kwargs):
 
 def launch_perfil_training(**kwargs):
         ti = kwargs['ti']
-        host = 'http://ec2-10-12-6-176.compute-1.amazonaws.com:8998'
+        host = 'http://ec2-xx-xx-x-xxx.compute-1.amazonaws.com:8998'
         data = {"file": "s3://hdata-belcorp/pyspark-files/Perfiles_Training.py", "name": "Test LivyREST", "driverMemory":"12G", "args":["PA", "201801"]}
         headers = {'Content-Type': 'application/json'}
         r = requests.post(host + '/batches', data=json.dumps(data), headers=headers)
